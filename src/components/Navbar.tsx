@@ -38,11 +38,6 @@ export default function Navbar() {
                   className="flex items-center space-x-1 text-gray-700 hover:text-purple-700 transition-colors duration-200 font-medium"
                 >
                   <span>{item.name}</span>
-                  {item.hasDropdown && (
-                    <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  )}
                 </a>
                 {/* Dropdown indicator */}
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-purple-800 transition-all duration-300 group-hover:w-full"></div>
@@ -86,11 +81,6 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
             >
               <span>{item.name}</span>
-              {item.hasDropdown && (
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              )}
             </a>
           ))}
           <div className="pt-4 border-t border-purple-100">
