@@ -1,8 +1,10 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Homepage/Hero";
 import Mission from "./components/Homepage/Mission";
-import EngineOverview from "./components/Homepage/EngineOverview";
-import ExtremeEvents from "./components/Homepage/ExtremeEvents";
+import TechShowcase from "./components/Homepage/TechShowcase";
+import Product from "./components/Homepage/Product";
+// import EngineOverview from "./components/Homepage/EngineOverview";
+// import ExtremeEvents from "./components/Homepage/ExtremeEvents";
 // import PredictionDemo from "./components/Homepage/PredictionDemo";
 
 function App() {
@@ -11,6 +13,8 @@ function App() {
       <Navbar />
       <Hero/>
       <Mission />
+      <TechShowcase />
+      <Product />
       {/* <EngineOverview /> */}
       {/* <ExtremeEvents/> */}
       <div className="container mx-auto px-6 lg:px-8 pb-20">
@@ -19,6 +23,5 @@ function App() {
     </>
   );
 }
-
 
 export default App;
