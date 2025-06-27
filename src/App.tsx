@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Homepage/Hero";
 import EngineOverview from "./components/Homepage/EngineOverview";
+import ExtremeEvents from "./components/Homepage/ExtremeEvents";
 // import PredictionDemo from "./components/Homepage/PredictionDemo";
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
     <>
       <Navbar />
       <Hero/>
-      <EngineOverview />
+      {/* <EngineOverview /> */}
+      {/* <ExtremeEvents/> */}
       <div className="container mx-auto px-6 lg:px-8 pb-20">
           {/* <PredictionDemo isVisible={true} /> */}
         </div>

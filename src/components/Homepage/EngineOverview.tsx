@@ -283,47 +283,7 @@ export default function EngineOverview() {
 
         </div>
 
-        {/* Charts section */}
-        <div className={`transition-all duration-1000 ${
-          chartVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold text-gray-800 mb-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
-                Live Market Impact
-              </span>
-            </h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {["Scenario Cloud", "High Probability", "Real Data"].map((tag, index) => (
-                <span
-                  key={index}
-                  className="px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 font-semibold rounded-full border border-purple-200 animate-pulse"
-                  style={{ animationDelay: `${index * 300}ms` }}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {Object.entries(chartData).map(([key, data], index) => (
-              <div 
-                key={key}
-                className={`transition-all duration-700 ${
-                  chartVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
-                style={{ transitionDelay: `${index * 200}ms` }}
-              >
-                <MiniChart 
-                  data={data} 
-                  title={key.replace(/([A-Z])/g, ' $1').trim()} 
-                  isVisible={chartVisible}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+
 
         {/* Bottom CTA */}
         <div className={`text-center mt-16 transition-all duration-1000 ${
@@ -333,12 +293,12 @@ export default function EngineOverview() {
             {/* Animated glow effect */}
             <div className="absolute -inset-2 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-60 transition duration-500 animate-pulse"></div>
             
-            <button className="relative px-12 py-5 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 text-white font-bold rounded-2xl transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/40 hover:scale-110 text-xl group-hover:from-purple-500 group-hover:to-pink-600 transform">
+            {/* <button className="relative px-12 py-5 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 text-white font-bold rounded-2xl transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/40 hover:scale-110 text-xl group-hover:from-purple-500 group-hover:to-pink-600 transform">
               <span className="relative z-10 flex items-center space-x-3">
                 <span>Explore Engine</span>
                 <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
               </span>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

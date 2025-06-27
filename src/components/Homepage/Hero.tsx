@@ -18,34 +18,63 @@ function AnimatedCounter({ target, suffix = "", duration = 2000 }: { target: num
   return <span>{count}{suffix}</span>;
 }
 
-// Modern metric card component
-function MetricCard({ value, suffix, label, colorClass, gradientFrom, gradientTo }: { 
+// Floating metric card component
+function FloatingMetricCard({ value, suffix, label, colorClass, gradientFrom, gradientTo, delay = 0, tilt = 0 }: { 
   value: number, 
   suffix: string, 
   label: string, 
   colorClass: string,
   gradientFrom: string,
-  gradientTo: string
+  gradientTo: string,
+  delay?: number,
+  tilt?: number
 }) {
+  const [isHovered, setIsHovered] = useState(false);
+  
   return (
-    <div className="group relative">
-      {/* Gradient border effect */}
-      <div className={`absolute -inset-0.5 bg-gradient-to-r ${gradientFrom} ${gradientTo} rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500`}></div>
+    <div 
+      className={`group relative transition-all duration-700 hover:scale-110 animate-float`}
+      style={{ 
+        animationDelay: `${delay}ms`,
+        transform: `rotate(${tilt}deg)`,
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Glow effect background */}
+      <div className={`absolute -inset-4 ${gradientFrom} ${gradientTo} bg-gradient-to-r rounded-3xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-500`} />
       
       {/* Main card */}
-      <div className="relative bg-white/90 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-white/20 hover:bg-white/95 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+      <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30 group-hover:bg-white transition-all duration-500">
+        {/* Animated border */}
+        <div className={`absolute inset-0 ${gradientFrom} ${gradientTo} bg-gradient-to-r rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
+        
         {/* Content */}
-        <div className="relative z-10">
-          <div className={`text-4xl lg:text-5xl font-black ${colorClass} mb-2 tracking-tight`}>
+        <div className="relative z-10 text-center">
+          <div className={`text-5xl lg:text-6xl font-black ${colorClass} mb-3 tracking-tight transition-transform duration-300 group-hover:scale-105`}>
             <AnimatedCounter target={value} suffix={suffix} />
           </div>
-          <div className="text-gray-600 font-medium text-base tracking-wide uppercase opacity-80">
+          <div className="text-gray-600 font-semibold text-sm tracking-wider uppercase">
             {label}
           </div>
         </div>
         
-        {/* Subtle glow effect */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${gradientFrom} ${gradientTo} rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+        {/* Floating particles */}
+        {isHovered && (
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {[...Array(3)].map((_, i) => (
+              <div
+                key={i}
+                className={`absolute w-2 h-2 ${gradientFrom} ${gradientTo} bg-gradient-to-r rounded-full animate-ping`}
+                style={{
+                  left: `${30 + (i * 20)}%`,
+                  top: `${20 + (i * 15)}%`,
+                  animationDelay: `${i * 0.2}s`,
+                }}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -71,7 +100,8 @@ export default function Hero() {
       label: "Global Wealth Market", 
       colorClass: "text-purple-600",
       gradientFrom: "from-purple-500",
-      gradientTo: "to-indigo-600"
+      gradientTo: "to-indigo-600",
+      tilt: -3
     },
     { 
       value: 99, 
@@ -79,7 +109,8 @@ export default function Hero() {
       label: "Scenario Accuracy", 
       colorClass: "text-purple-700",
       gradientFrom: "from-purple-600",
-      gradientTo: "to-pink-600"
+      gradientTo: "to-pink-600",
+      tilt: 2
     },
     { 
       value: 10, 
@@ -87,12 +118,24 @@ export default function Hero() {
       label: "Response Time", 
       colorClass: "text-purple-800",
       gradientFrom: "from-indigo-600",
-      gradientTo: "to-purple-700"
+      gradientTo: "to-purple-700",
+      tilt: -1
     }
   ];
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-white via-purple-50 to-white overflow-hidden">
+      {/* Add floating animation keyframes */}
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-15px); }
+        }
+        .animate-float {
+          animation: float 4s ease-in-out infinite;
+        }
+      `}</style>
+
       {/* Background layers */}
       <div className="absolute inset-0">
         {/* Wave layers */}
@@ -150,19 +193,23 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Key metrics - Modern design */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
-            {metrics.map((metric, index) => (
-              <MetricCard 
-                key={index}
-                value={metric.value}
-                suffix={metric.suffix}
-                label={metric.label}
-                colorClass={metric.colorClass}
-                gradientFrom={metric.gradientFrom}
-                gradientTo={metric.gradientTo}
-              />
-            ))}
+          {/* Key metrics - Simplified floating design */}
+          <div className="relative max-w-6xl mx-auto py-12">
+            <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-16">
+              {metrics.map((metric, index) => (
+                <FloatingMetricCard 
+                  key={index}
+                  value={metric.value}
+                  suffix={metric.suffix}
+                  label={metric.label}
+                  colorClass={metric.colorClass}
+                  gradientFrom={metric.gradientFrom}
+                  gradientTo={metric.gradientTo}
+                  delay={index * 200}
+                  tilt={metric.tilt}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Key benefits */}

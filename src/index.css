@@ -20,3 +20,41 @@
     opacity: 0.6;
   }
 }
+
+@keyframes float-delay {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.2;
+  }
+  33% {
+    transform: translateY(-15px) rotate(120deg);
+    opacity: 0.5;
+  }
+  66% {
+    transform: translateY(-30px) rotate(240deg);
+    opacity: 0.7;
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float-delay 10s ease-in-out infinite 2s;
+}
+
+@keyframes scenarioFlash {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-10px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(0.95) translateY(5px);
+  }
+}
