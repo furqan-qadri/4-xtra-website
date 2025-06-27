@@ -4,9 +4,9 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigationItems = [
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'Leading Mindsets', href: '#mindsets' },
-    { name: 'About', href: '#about' },
+    { name: 'Mission', href: '#solutions' },
+    { name: 'Tech', href: '#mindsets' },
+    { name: 'Team', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
 
