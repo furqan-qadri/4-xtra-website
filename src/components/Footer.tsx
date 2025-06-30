@@ -42,9 +42,12 @@ export default function Footer() {
                 <span>LinkedIn</span>
               </a>
               
-              <button className="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105">
-                Contact Us
-              </button>
+              <a 
+              href="mailto:info@4-xtra.com"
+              className="px-8 sm:px-10 py-3 bg-white/80 backdrop-blur-sm text-purple-700 font-semibold rounded-lg border border-purple-300/50 transition-all duration-300 hover:bg-white/90 hover:border-purple-400/70 text-sm sm:text-base shadow-lg text-center"
+            >
+              Contact Us
+            </a>
             </div>
 
             {/* Copyright */}

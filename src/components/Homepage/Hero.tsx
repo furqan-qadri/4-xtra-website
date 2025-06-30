@@ -45,16 +45,16 @@ function FloatingMetricCard({ value, suffix, label, colorClass, gradientFrom, gr
       <div className={`absolute -inset-4 ${gradientFrom} ${gradientTo} bg-gradient-to-r rounded-3xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-500`} />
       
       {/* Main card */}
-      <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30 group-hover:bg-white transition-all duration-500">
+      <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl p-4 sm:p-8 shadow-2xl border border-white/30 group-hover:bg-white transition-all duration-500">
         {/* Animated border */}
         <div className={`absolute inset-0 ${gradientFrom} ${gradientTo} bg-gradient-to-r rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
         
         {/* Content */}
         <div className="relative z-10 text-center">
-          <div className={`text-5xl lg:text-6xl font-black ${colorClass} mb-3 tracking-tight transition-transform duration-300 group-hover:scale-105`}>
+          <div className={`text-3xl sm:text-5xl lg:text-6xl font-black ${colorClass} mb-2 sm:mb-3 tracking-tight transition-transform duration-300 group-hover:scale-105`}>
             <AnimatedCounter target={value} suffix={suffix} />
           </div>
-          <div className="text-gray-600 font-semibold text-sm tracking-wider uppercase">
+          <div className="text-gray-600 font-semibold text-xs sm:text-sm tracking-wider uppercase">
             {label}
           </div>
         </div>
@@ -178,24 +178,24 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent" />
 
       {/* Main content */}
-      <div className="relative z-10 h-screen flex flex-col justify-center px-8 lg:px-16  pb-8">
-        <div className={`text-center space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className="relative z-10 h-screen flex flex-col justify-center px-4 sm:px-8 lg:px-16 pb-8">
+        <div className={`text-center space-y-6 sm:space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {/* Main headline */}
-          <div className="space-y-4">
-            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
+          <div className="space-y-3 sm:space-y-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
               AI-Powered Market
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 block">
                 Scenario Generation
               </span>
             </h2>
-            <p className="text-lg lg:text-xl text-gray-700 leading-relaxed max-w-5xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-5xl mx-auto px-2 sm:px-0">
               Transform hypothetical shock events into actionable risk intelligence with our next-generation synthetic data platform for the <span className="text-purple-700 font-semibold">$500 trillion</span> global wealth market.
             </p>
           </div>
 
           {/* Key metrics - Simplified floating design */}
-          <div className="relative max-w-6xl mx-auto py-6">
-            <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
+          <div className="relative max-w-6xl mx-auto py-4 sm:py-6">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-4 sm:gap-8 lg:gap-12">
               {metrics.map((metric, index) => (
                 <FloatingMetricCard 
                   key={index}
@@ -213,34 +213,37 @@ export default function Hero() {
           </div>
 
           {/* Key benefits */}
-          <div className="flex flex-wrap justify-center gap-4 lg:gap-8 max-w-6xl mx-auto">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 sm:gap-4 lg:gap-8 max-w-6xl mx-auto px-2 sm:px-0">
             {benefits.map((benefit, index) => (
               <div 
                 key={index}
-                className={`flex items-center space-x-3 transition-all duration-700 ${
+                className={`flex items-center justify-center sm:justify-start space-x-3 transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full"></div>
-                <span className="text-gray-700 text-base lg:text-lg">{benefit}</span>
+                <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full flex-shrink-0"></div>
+                <span className="text-gray-700 text-sm sm:text-base lg:text-lg text-center sm:text-left">{benefit}</span>
               </div>
             ))}
           </div>
 
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-2 px-4 sm:px-0">
             <a 
               href="https://4-xtra-demo.vercel.app/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="px-10 py-3 bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 text-base text-center"
+              className="px-8 sm:px-10 py-3 bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 text-sm sm:text-base text-center"
             >
               Demo
             </a>
-            <button className="px-10 py-3 bg-white/80 backdrop-blur-sm text-purple-700 font-semibold rounded-lg border border-purple-300/50 transition-all duration-300 hover:bg-white/90 hover:border-purple-400/70 text-base shadow-lg">
+            <a 
+              href="mailto:info@4-xtra.com"
+              className="px-8 sm:px-10 py-3 bg-white/80 backdrop-blur-sm text-purple-700 font-semibold rounded-lg border border-purple-300/50 transition-all duration-300 hover:bg-white/90 hover:border-purple-400/70 text-sm sm:text-base shadow-lg text-center"
+            >
               Contact Us
-            </button>
+            </a>
           </div>
         </div>
       </div>

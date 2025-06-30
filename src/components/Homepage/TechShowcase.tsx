@@ -224,7 +224,7 @@ export default function TechShowcase() {
                 Our
               </span>
             </div> */}
-            <h1 className="text-xl lg:text-7xl xl:text-6xl text-primary-900 font-extrabold mb-10 ">
+            <h1 className="text-4xl lg:text-7xl xl:text-6xl text-primary-900 font-extrabold mb-10 ">
                 {/* <MorphingText text="MISSION" delay={300} />  */}
                 TECH
               </h1>

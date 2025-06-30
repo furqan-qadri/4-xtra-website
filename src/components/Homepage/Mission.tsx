@@ -103,14 +103,14 @@ export default function Mission() {
           <div className={`transition-all duration-2000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
             {/* Stylized "OUR" */}
             <div className="mb-4">
-              <span className="text-4xl lg:text-3xl font-light text-gray-600 tracking-[0.5em]">
+              <span className="text-2xl lg:text-3xl font-light text-gray-600 tracking-[0.5em]">
                 <MorphingText text="OUR" />
               </span>
             </div>
             
             {/* Giant "MISSION" */}
             <div className="relative">
-              <h1 className="text-xl lg:text-7xl xl:text-6xl text-primary-900 font-extrabold">
+              <h1 className="text-4xl lg:text-7xl xl:text-6xl text-primary-900 font-extrabold">
                 <MorphingText text="MISSION" delay={300} />
               </h1>
               
