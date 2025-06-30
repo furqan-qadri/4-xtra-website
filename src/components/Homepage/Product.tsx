@@ -221,9 +221,9 @@ export default function Product() {
         {/* Risk Factor Categories Grid */}
         <div className="mb-16">
           <div className={`text-center mb-12 transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h3 className="text-3xl lg:text-4xl font-black text-primary-900 mb-4">
+            <h2 className="text-3xl lg:text-4xl font-black text-primary-900 mb-4">
               Comprehensive Risk Coverage
-            </h3>
+            </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Our AI models are trained across diverse risk categories to provide holistic market intelligence
             </p>
