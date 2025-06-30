@@ -37,15 +37,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="flex items-center">
-              <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-purple-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">4X</span>
-              </div>
-              <div className="ml-3">
-                <h1 className="text-xl font-bold text-gray-900">
-                  4-<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-800">Xtra</span>
-                </h1>
-                <div className="text-xs text-purple-700 font-medium -mt-1">Technologies</div>
-              </div>
+              <img src="/logo.png" alt="4-Xtra" className="h-12 xl:h-14" />
             </div>
           </div>
 

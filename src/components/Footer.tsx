@@ -7,16 +7,8 @@ export default function Footer() {
           {/* Left side - Logo and Slogan */}
           <div className="flex flex-col items-center md:items-start space-y-4">
             {/* Logo */}
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-purple-800 rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">4X</span>
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900">
-                  4-<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-800">Xtra</span>
-                </h1>
-                <div className="text-sm text-purple-700 font-medium -mt-1">Technologies</div>
-              </div>
+            <div className="flex items-center">
+              <img src="/logo.png" alt="4-Xtra" className="h-12 xl:h-20" />
             </div>
             
             {/* Slogan */}
@@ -26,8 +18,7 @@ export default function Footer() {
           </div>
 
           {/* Right side - Actions and Copyright */}
-          <div className="flex flex-col items-center md:items-end space-y-6">
-            
+          <div className="flex flex-col justify-between gap-4 xl:gap-6 h-full md:items-end items-center">
             {/* Action buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -53,7 +44,7 @@ export default function Footer() {
             {/* Copyright */}
             <div className="text-center md:text-right text-sm text-gray-500">
               <p>&copy; {new Date().getFullYear()} 4-Xtra Technologies. All rights reserved.</p>
-            </div>
+             </div>
           </div>
         </div>
 
