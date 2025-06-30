@@ -242,12 +242,12 @@ export default function Team() {
                 : "opacity-0 translate-y-10"
             }`}
           >
-            <h1 className="text-5xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 leading-none tracking-tight mb-6">
+            <h1 className="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 leading-none tracking-tight mb-6">
               THE EXEC TEAM
             </h1>
             <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
               A blend of seasoned experience and expertise in data, finance,
-              advanced science, commercialisation and tech venture-building
+              advanced science, commercialization and tech venture-building
             </p>
           </div>
         </div>
