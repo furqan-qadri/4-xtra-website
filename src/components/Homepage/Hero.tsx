@@ -178,24 +178,24 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent" />
 
       {/* Main content */}
-      <div className="relative z-10 min-h-screen flex flex-col justify-center px-8 lg:px-16">
-        <div className={`text-center space-y-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className="relative z-10 h-screen flex flex-col justify-center px-8 lg:px-16  pb-8">
+        <div className={`text-center space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {/* Main headline */}
-          <div className="space-y-6">
-            <h2 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
+          <div className="space-y-4">
+            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
               AI-Powered Market
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 block">
                 Scenario Generation
               </span>
             </h2>
-            <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-6xl mx-auto">
+            <p className="text-lg lg:text-xl text-gray-700 leading-relaxed max-w-5xl mx-auto">
               Transform hypothetical shock events into actionable risk intelligence with our next-generation synthetic data platform for the <span className="text-purple-700 font-semibold">$500 trillion</span> global wealth market.
             </p>
           </div>
 
           {/* Key metrics - Simplified floating design */}
-          <div className="relative max-w-6xl mx-auto py-12">
-            <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-16">
+          <div className="relative max-w-6xl mx-auto py-6">
+            <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
               {metrics.map((metric, index) => (
                 <FloatingMetricCard 
                   key={index}
@@ -213,7 +213,7 @@ export default function Hero() {
           </div>
 
           {/* Key benefits */}
-          <div className="flex flex-wrap justify-center gap-6 lg:gap-12 max-w-7xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-8 max-w-6xl mx-auto">
             {benefits.map((benefit, index) => (
               <div 
                 key={index}
@@ -223,17 +223,22 @@ export default function Hero() {
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full"></div>
-                <span className="text-gray-700 text-lg lg:text-xl">{benefit}</span>
+                <span className="text-gray-700 text-base lg:text-lg">{benefit}</span>
               </div>
             ))}
           </div>
 
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center pt-4">
-            <button className="px-12 py-4 bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 text-lg">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+            <a 
+              href="https://4-xtra-demo.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-10 py-3 bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 text-base text-center"
+            >
               Demo
-            </button>
-            <button className="px-12 py-4 bg-white/80 backdrop-blur-sm text-purple-700 font-semibold rounded-lg border border-purple-300/50 transition-all duration-300 hover:bg-white/90 hover:border-purple-400/70 text-lg shadow-lg">
+            </a>
+            <button className="px-10 py-3 bg-white/80 backdrop-blur-sm text-purple-700 font-semibold rounded-lg border border-purple-300/50 transition-all duration-300 hover:bg-white/90 hover:border-purple-400/70 text-base shadow-lg">
               Contact Us
             </button>
           </div>

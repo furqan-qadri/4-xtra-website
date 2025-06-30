@@ -46,10 +46,15 @@ export default function Navbar() {
           </div>
 
           {/* Action Buttons */}
-          <div className="hidden md:flex items-center">
-            <button className="px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 transition-all duration-200">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+            <a 
+              href="https://4-xtra-demo.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-10 py-3 bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 text-base text-center"
+            >
               Demo
-            </button>
+            </a>
           </div>
 
           {/* Mobile menu button */}

@@ -6,6 +6,7 @@ function TeamMemberCard({
   title, 
   expertise, 
   skills,
+  imageUrl,
   delay,
   isVisible,
   index
@@ -14,6 +15,7 @@ function TeamMemberCard({
   title: string;
   expertise: string;
   skills: string[];
+  imageUrl?: string;
   delay: number;
   isVisible: boolean;
   index: number;
@@ -43,13 +45,36 @@ function TeamMemberCard({
       {/* Main card */}
       <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30 group-hover:bg-white transition-all duration-500 group-hover:scale-105 h-full">
         
-        {/* Image placeholder with gradient */}
-        <div className={`relative w-32 h-32 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${gradients[index]} overflow-hidden group-hover:scale-110 transition-transform duration-500`}>
-          <div className="absolute inset-0 bg-white/20 backdrop-blur-sm flex items-center justify-center">
-            <div className="text-white text-4xl font-bold opacity-60">
-              {name.split(' ').map(n => n[0]).join('')}
+        {/* Image with gradient fallback */}
+        <div className={`relative w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden group-hover:scale-110 transition-transform duration-500 ${!imageUrl ? `bg-gradient-to-br ${gradients[index]}` : ''}`}>
+          {imageUrl ? (
+            <>
+              <img 
+                src={imageUrl} 
+                alt={name}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  // Fallback to gradient placeholder if image fails to load
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const fallback = target.nextElementSibling as HTMLElement;
+                  if (fallback) fallback.style.display = 'flex';
+                }}
+              />
+              {/* Fallback gradient placeholder (hidden by default) */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${gradients[index]} hidden items-center justify-center`}>
+                <div className="text-white text-4xl font-bold opacity-60">
+                  {name.split(' ').map(n => n[0]).join('')}
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="absolute inset-0 bg-white/20 backdrop-blur-sm flex items-center justify-center">
+              <div className="text-white text-4xl font-bold opacity-60">
+                {name.split(' ').map(n => n[0]).join('')}
+              </div>
             </div>
-          </div>
+          )}
           {/* Pulse rings */}
           <div className="absolute inset-0 border-2 border-white/30 rounded-2xl animate-pulse" />
         </div>
@@ -124,7 +149,8 @@ export default function Team() {
         "Quantitative Modelling",
         "Risk Management",
         "Investment Banking"
-      ]
+      ],
+      imageUrl: "public/janos.png"
     },
     {
       name: "Ben Mein",
@@ -136,7 +162,8 @@ export default function Team() {
         "Venture Building",
         "TMT & Fintech",
         "Fundraising & PE"
-      ]
+      ],
+      imageUrl: "public/ben.png"
     },
     {
       name: "Dr. Lukas Cironis", 
@@ -148,7 +175,8 @@ export default function Team() {
         "Transformer Models",
         "Diffusion Models",
         "ML Technology"
-      ]
+      ],
+      imageUrl: "public/lukas.png"
     }
   ];
 
