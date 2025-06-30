@@ -1,9 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 // Animated counter component
-function AnimatedCounter({ target, duration = 2000, suffix = "" }: { target: number, duration?: number, suffix?: string }) {
+function AnimatedCounter({
+  target,
+  duration = 2000,
+  suffix = "",
+}: {
+  target: number;
+  duration?: number;
+  suffix?: string;
+}) {
   const [count, setCount] = useState(0);
-  
+
   useEffect(() => {
     let startTime: number | undefined;
     const animate = (timestamp: number) => {
@@ -14,19 +22,24 @@ function AnimatedCounter({ target, duration = 2000, suffix = "" }: { target: num
     };
     requestAnimationFrame(animate);
   }, [target, duration]);
-  
-  return <span>{count}{suffix}</span>;
+
+  return (
+    <span>
+      {count}
+      {suffix}
+    </span>
+  );
 }
 
 // Risk factor card component
-function RiskFactorCard({ 
-  category, 
-  factors, 
-  icon, 
+function RiskFactorCard({
+  category,
+  factors,
+  icon,
   color,
   delay,
-  isVisible 
-}: { 
+  isVisible,
+}: {
   category: string;
   factors: string[];
   icon: string;
@@ -35,36 +48,52 @@ function RiskFactorCard({
   isVisible: boolean;
 }) {
   return (
-    <div 
+    <div
       className={`group relative transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'
+        isVisible
+          ? "opacity-100 translate-y-0 scale-100"
+          : "opacity-0 translate-y-10 scale-95"
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {/* Glow effect */}
-      <div className={`absolute -inset-2 ${color} rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-all duration-500`} />
-      
+      <div
+        className={`absolute -inset-2 ${color} rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-all duration-500`}
+      />
+
       {/* Main card */}
       <div className="relative bg-white/90 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-white/30 group-hover:bg-white transition-all duration-500 group-hover:scale-105">
         <div className="flex items-center mb-4">
-          <div className="text-3xl mr-3 group-hover:scale-110 transition-transform duration-300">
-            {icon}
+          <div className="mr-3 group-hover:scale-110 transition-transform duration-300">
+            {icon.startsWith("/") || icon.startsWith("http") ? (
+              <img
+                src={icon}
+                alt={category}
+                className="w-8 h-8 object-contain"
+              />
+            ) : (
+              <div className="text-3xl">{icon}</div>
+            )}
           </div>
           <h3 className="text-lg font-bold text-primary-900 group-hover:text-purple-700 transition-colors duration-300">
             {category}
           </h3>
         </div>
-        
+
         <div className="space-y-2">
           {factors.map((factor, index) => (
-            <div 
+            <div
               key={index}
               className={`flex items-center text-sm text-gray-600 transition-all duration-500 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
+                isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-4"
               }`}
-              style={{ transitionDelay: `${delay + (index * 100)}ms` }}
+              style={{ transitionDelay: `${delay + index * 100}ms` }}
             >
-              <div className={`w-2 h-2 ${color} rounded-full mr-3 animate-pulse`} />
+              <div
+                className={`w-2 h-2 ${color} rounded-full mr-3 animate-pulse`}
+              />
               {factor}
             </div>
           ))}
@@ -87,7 +116,7 @@ export default function Product() {
       { threshold: 0.2 }
     );
 
-    const section = document.getElementById('product-section');
+    const section = document.getElementById("product-section");
     if (section) observer.observe(section);
 
     return () => observer.disconnect();
@@ -96,40 +125,70 @@ export default function Product() {
   const riskFactors = [
     {
       category: "Market Dynamics",
-      factors: ["Volatility Patterns", "Liquidity Shifts", "Price Correlations", "Trading Volumes"],
-      icon: "📈",
-      color: "bg-primary-900"
+      factors: [
+        "Volatility Patterns",
+        "Liquidity Shifts",
+        "Price Correlations",
+        "Trading Volumes",
+      ],
+      icon: "/icons8-graph-64.png",
+      color: "bg-primary-900",
     },
     {
-      category: "Economic Indicators", 
-      factors: ["Interest Rates", "Inflation Metrics", "GDP Growth", "Employment Data"],
-      icon: "🏛️",
-     color: "bg-primary-900"
+      category: "Economic Indicators",
+      factors: [
+        "Interest Rates",
+        "Inflation Metrics",
+        "GDP Growth",
+        "Employment Data",
+      ],
+      icon: "/icons8-money-100.png",
+      color: "bg-primary-900",
     },
     {
       category: "Geopolitical Events",
-      factors: ["Policy Changes", "Trade Relations", "Political Stability", "Regulatory Shifts"],
-      icon: "🌍",
-    color: "bg-primary-900"
+      factors: [
+        "Policy Changes",
+        "Trade Relations",
+        "Political Stability",
+        "Regulatory Shifts",
+      ],
+      icon: "/icons8-world-100.png",
+      color: "bg-primary-900",
     },
     {
       category: "Sector Analysis",
-      factors: ["Industry Trends", "Company Performance", "Sector Rotation", "Credit Metrics"],
-      icon: "🏢",
-       color: "bg-primary-900"
+      factors: [
+        "Industry Trends",
+        "Company Performance",
+        "Sector Rotation",
+        "Credit Metrics",
+      ],
+      icon: "/icons8-building-100.png",
+      color: "bg-primary-900",
     },
     {
       category: "Alternative Assets",
-      factors: ["Real Estate", "Commodities", "Crypto Markets", "Private Equity"],
-      icon: "💎",
-         color: "bg-primary-900"
+      factors: [
+        "Real Estate",
+        "Commodities",
+        "Crypto Markets",
+        "Private Equity",
+      ],
+      icon: "/icons8-diamond-100.png",
+      color: "bg-primary-900",
     },
     {
       category: "Risk Scenarios",
-      factors: ["Stress Testing", "Tail Risk Events", "Black Swan Analysis", "Cascade Effects"],
-      icon: "⚠️",
-      color: "bg-red-500"
-    }
+      factors: [
+        "Stress Testing",
+        "Tail Risk Events",
+        "Black Swan Analysis",
+        "Cascade Effects",
+      ],
+      icon: "/icons8-risk-100.png",
+      color: "bg-red-500",
+    },
   ];
 
   return (
@@ -162,31 +221,46 @@ export default function Product() {
       <div className="relative z-10 max-w-7xl mx-auto px-8">
         {/* Section header */}
         <div className="text-center mb-16">
-          <div className={`transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h1 className="text-xl lg:text-7xl xl:text-6xl text-primary-900 font-extrabold">
-                {/* <MorphingText text="MISSION" delay={300} /> */}POWERED BY
-              </h1>
+          <div
+            className={`transition-all duration-1500 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
+            <h1 className="text-xl lg:text-7xl xl:text-6xl text-primary-900 font-extrabold">
+              {/* <MorphingText text="MISSION" delay={300} /> */}POWERED BY
+            </h1>
           </div>
         </div>
 
         {/* Proprietary Knowledge Layer Section */}
         <div className="mb-12">
-          <div className={`text-center mb-12 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div
+            className={`text-center mb-12 transition-all duration-1000 delay-300 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
             <h2 className="text-3xl lg:text-4xl font-black text-primary-900 mb-6">
               Proprietary Knowledge Layer
             </h2>
           </div>
-
-         
         </div>
 
         {/* 250+ Risk Factors Hero Section */}
         <div className="mb-24">
-          <div className={`relative overflow-hidden  transition-all duration-1500 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div
+            className={`relative overflow-hidden  transition-all duration-1500 delay-700 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
             {/* Animated gradient background */}
             <div className="absolute inset-0 bg-gradient-to-r rounded-3xl from-purple-600 via-indigo-600 via-pink-600 to-purple-600 bg-[length:300%_100%] animate-gradient" />
-            
-            
+
             {/* Floating rings */}
             {[...Array(3)].map((_, i) => (
               <div
@@ -195,14 +269,14 @@ export default function Product() {
                 style={{
                   width: `${200 + i * 100}px`,
                   height: `${200 + i * 100}px`,
-                  left: '50%',
-                  top: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  animationDelay: `${i * 0.5}s`
+                  left: "50%",
+                  top: "50%",
+                  transform: "translate(-50%, -50%)",
+                  animationDelay: `${i * 0.5}s`,
                 }}
               />
             ))}
-            
+
             {/* Content */}
             <div className="relative z-10 px-8 py-20 text-center">
               <div className="text-8xl lg:text-9xl font-black text-white mb-6 drop-shadow-2xl">
@@ -212,7 +286,8 @@ export default function Product() {
                 Pre-trained Risk Factors
               </h3>
               <p className="text-xl lg:text-2xl text-white/90 leading-relaxed max-w-4xl mx-auto">
-                Ready for simulating shock events and synthetic data with unprecedented accuracy and depth
+                Ready for simulating shock events and synthetic data with
+                unprecedented accuracy and depth
               </p>
             </div>
           </div>
@@ -220,12 +295,19 @@ export default function Product() {
 
         {/* Risk Factor Categories Grid */}
         <div className="mb-16">
-          <div className={`text-center mb-12 transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div
+            className={`text-center mb-12 transition-all duration-1000 delay-1000 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
             <h2 className="text-3xl lg:text-4xl font-black text-primary-900 mb-4">
               Comprehensive Risk Coverage
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our AI models are trained across diverse risk categories to provide holistic market intelligence
+              Our AI models are trained across diverse risk categories to
+              provide holistic market intelligence
             </p>
           </div>
 
@@ -234,14 +316,13 @@ export default function Product() {
               <RiskFactorCard
                 key={index}
                 {...category}
-                delay={1200 + (index * 150)}
+                delay={1200 + index * 150}
                 isVisible={isVisible}
               />
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
-} 
+}
