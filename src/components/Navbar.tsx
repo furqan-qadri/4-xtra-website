@@ -11,7 +11,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="relative bg-white/95 backdrop-blur-md border-b border-purple-100/50 shadow-sm sticky top-0 z-50">
+    <nav className="relative backdrop-blur-md border-b border-purple-100/50 shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -71,7 +71,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navigation Menu */}
-      <div className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden bg-white border-t border-purple-100/50`}>
+      <div className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden backdrop-blur-md border-t border-purple-100/50`}>
         <div className="px-4 py-4 space-y-4">
           {navigationItems.map((item) => (
             <a

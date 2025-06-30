@@ -93,54 +93,7 @@ export default function Mission() {
   }, []);
 
   return (
-    <section id="mission-section" className="relative min-h-screen bg-white overflow-hidden">
-      {/* Custom styles for unique animations */}
-      <style>{`
-        @keyframes morphWave {
-          0%, 100% { 
-            transform: translateX(0) scaleY(1);
-            opacity: 0.3;
-          }
-          50% { 
-            transform: translateX(20px) scaleY(1.1);
-            opacity: 0.6;
-          }
-        }
-        @keyframes floatSlow {
-          0%, 100% { transform: translateY(0) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(2deg); }
-        }
-        .animate-morph-wave {
-          animation: morphWave 8s ease-in-out infinite;
-        }
-        .animate-float-slow {
-          animation: floatSlow 12s ease-in-out infinite;
-        }
-      `}</style>
-
-      {/* Large geometric background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Main diagonal sweep */}
-        <div 
-          className="absolute -top-20 -left-20 w-full h-full bg-gradient-to-br from-purple-100 via-purple-50 to-transparent opacity-40 animate-morph-wave"
-          style={{
-            clipPath: 'polygon(0 0, 60% 0, 40% 100%, 0 100%)'
-          }}
-        />
-        
-        {/* Intersecting diagonal */}
-        <div 
-          className="absolute -top-20 -right-20 w-full h-full bg-gradient-to-bl from-indigo-100 via-indigo-50 to-transparent opacity-30 animate-morph-wave"
-          style={{
-            clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 60% 100%)',
-            animationDelay: '4s'
-          }}
-        />
-
-        {/* Floating accent shapes */}
-        <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full opacity-10 animate-float-slow" />
-        <div className="absolute bottom-40 left-10 w-20 h-20 bg-gradient-to-br from-indigo-400 to-indigo-600 opacity-15 animate-float-slow" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)', animationDelay: '6s' }} />
-      </div>
+    <section id="mission-section" className="relative min-h-screen overflow-hidden">
 
              {/* Main content container */}
        <div className="relative z-10 max-w-7xl mx-auto px-8 py-12">

@@ -200,52 +200,19 @@ export default function TechShowcase() {
   ];
 
   return (
-    <section id="tech-showcase-section" className="relative min-h-screen bg-gradient-to-br from-gray-50 via-white to-purple-50 overflow-hidden py-20">
+    <section id="tech-showcase-section" className="relative min-h-screen overflow-hidden py-20">
       {/* Custom animations */}
       <style>{`
         @keyframes gradient {
           0%, 100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
         }
-        @keyframes float-tech {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-15px) rotate(1deg); }
-        }
-        @keyframes pulse-glow {
-          0%, 100% { opacity: 0.3; transform: scale(1); }
-          50% { opacity: 0.6; transform: scale(1.05); }
-        }
         .animate-gradient {
           animation: gradient 8s ease-in-out infinite;
         }
-        .animate-float-tech {
-          animation: float-tech 6s ease-in-out infinite;
-        }
-        .animate-pulse-glow {
-          animation: pulse-glow 4s ease-in-out infinite;
-        }
       `}</style>
 
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Floating geometric shapes */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-indigo-500/20 rounded-full animate-float-tech" />
-        <div className="absolute top-40 right-20 w-20 h-20 bg-gradient-to-br from-yellow-400/20 to-orange-500/20 animate-float-tech" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)', animationDelay: '2s' }} />
-        <div className="absolute bottom-40 left-20 w-24 h-24 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 animate-float-tech" style={{ clipPath: 'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)', animationDelay: '4s' }} />
-        <div className="absolute bottom-20 right-10 w-28 h-28 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-full animate-pulse-glow" style={{ animationDelay: '1s' }} />
-        
-        {/* Tech circuit pattern overlay */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="w-full h-full bg-gradient-to-r from-purple-900 to-indigo-900" style={{
-            backgroundImage: `
-              radial-gradient(circle at 25% 25%, purple 2px, transparent 2px),
-              radial-gradient(circle at 75% 75%, indigo 2px, transparent 2px),
-              linear-gradient(45deg, transparent 48%, purple 49%, purple 51%, transparent 52%)
-            `,
-            backgroundSize: '50px 50px, 50px 50px, 25px 25px'
-          }} />
-        </div>
-      </div>
+
 
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto px-8">

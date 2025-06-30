@@ -10,7 +10,7 @@ import Team from "./components/Homepage/Team";
 
 function App() {
   return (
-    <>
+    <div className="min-h-screen">
       <Navbar />
       <Hero/>
       <Mission />
@@ -22,7 +22,7 @@ function App() {
       <div className="container mx-auto px-6 lg:px-8 pb-20">
           {/* <PredictionDemo isVisible={true} /> */}
         </div>
-    </>
+    </div>
   );
 }
 

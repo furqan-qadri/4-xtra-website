@@ -18,38 +18,6 @@ function AnimatedCounter({ target, duration = 2000, suffix = "" }: { target: num
   return <span>{count}{suffix}</span>;
 }
 
-// Floating knowledge node component
-function KnowledgeNode({ 
-  size, 
-  color, 
-  position, 
-  delay, 
-  isVisible 
-}: { 
-  size: number; 
-  color: string; 
-  position: { x: number; y: number }; 
-  delay: number;
-  isVisible: boolean;
-}) {
-  return (
-    <div 
-      className={`absolute rounded-full transition-all duration-1000 ${color} ${
-        isVisible ? 'opacity-60 scale-100' : 'opacity-0 scale-0'
-      }`}
-      style={{
-        width: `${size}px`,
-        height: `${size}px`,
-        left: `${position.x}%`,
-        top: `${position.y}%`,
-        transitionDelay: `${delay}ms`,
-        animation: isVisible ? `float-knowledge ${3 + Math.random() * 2}s ease-in-out infinite` : 'none',
-        animationDelay: `${delay + Math.random() * 1000}ms`
-      }}
-    />
-  );
-}
-
 // Risk factor card component
 function RiskFactorCard({ 
   category, 
@@ -165,7 +133,7 @@ export default function Product() {
   ];
 
   return (
-    <section id="product-section" className="relative min-h-screen bg-gradient-to-br from-white via-purple-50 to-indigo-50 overflow-hidden py-20">
+    <section id="product-section" className="relative min-h-screen overflow-hidden py-20">
       {/* Custom animations */}
       <style>{`
         @keyframes float-knowledge {
@@ -190,58 +158,23 @@ export default function Product() {
         }
       `}</style>
 
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Floating data particles */}
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-purple-400 rounded-full opacity-30 animate-data-flow"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 8}s`,
-              animationDuration: `${8 + Math.random() * 4}s`
-            }}
-          />
-        ))}
-        
-        {/* Neural network pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="w-full h-full" style={{
-            backgroundImage: `
-              radial-gradient(circle at 20% 20%, purple 1px, transparent 1px),
-              radial-gradient(circle at 80% 80%, indigo 1px, transparent 1px),
-              radial-gradient(circle at 60% 40%, pink 1px, transparent 1px)
-            `,
-            backgroundSize: '100px 100px, 120px 120px, 80px 80px'
-          }} />
-        </div>
-      </div>
-
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto px-8">
         {/* Section header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <div className={`transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h1 className="text-6xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-800 leading-none tracking-tight mb-8">
+            <h1 className="text-4xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-800 leading-none tracking-tight mb-4">
               POWERED BY
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
-              Revolutionary knowledge architecture powering intelligent risk analysis
-            </p>
           </div>
         </div>
 
         {/* Proprietary Knowledge Layer Section */}
-        <div className="mb-24">
+        <div className="mb-12">
           <div className={`text-center mb-12 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h2 className="text-4xl lg:text-5xl font-black text-purple-600 mb-6">
+            <h2 className="text-3xl lg:text-4xl font-black text-purple-600 mb-6">
               Proprietary Knowledge Layer
             </h2>
-            <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-              Build up imitable knowledge base through advanced AI-driven data synthesis
-            </p>
           </div>
 
          
@@ -249,12 +182,10 @@ export default function Product() {
 
         {/* 250+ Risk Factors Hero Section */}
         <div className="mb-24">
-          <div className={`relative overflow-hidden rounded-4xl transition-all duration-1500 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`relative overflow-hidden  transition-all duration-1500 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {/* Animated gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-indigo-600 via-pink-600 to-purple-600 bg-[length:300%_100%] animate-gradient" />
+            <div className="absolute inset-0 bg-gradient-to-r rounded-3xl from-purple-600 via-indigo-600 via-pink-600 to-purple-600 bg-[length:300%_100%] animate-gradient" />
             
-            {/* Glass overlay */}
-            <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
             
             {/* Floating rings */}
             {[...Array(3)].map((_, i) => (
