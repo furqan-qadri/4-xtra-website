@@ -58,8 +58,13 @@ function TechFeatureCard({
       <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30 group-hover:bg-white transition-all duration-500 group-hover:shadow-3xl group-hover:scale-105">
         {/* Floating icon container */}
         <div className="relative mb-6">
-          <div className={`text-6xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 ${accentColor}`}>
-            {icon}
+          <div className="w-16 h-16 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+            <img 
+              src={icon} 
+              alt={title}
+              className="w-full h-full object-contain filter brightness-0 saturate-100"
+              style={{ filter: 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(246deg) brightness(104%) contrast(97%)' }}
+            />
           </div>
           
           {/* Orbiting particles */}
@@ -171,7 +176,7 @@ export default function TechShowcase() {
 
   const techFeatures = [
     {
-      icon: "⚡",
+      icon: "/icons8-lightning-bolt-100.png",
       title: "Super-Fast Conditional Modelling",
       description: "Builds comprehensive simulations in minutes or hours, not weeks or months. Revolutionary speed meets enterprise-grade precision.",
       accentColor: "text-primary-900",
@@ -180,7 +185,7 @@ export default function TechShowcase() {
       stats: { value: 10, suffix: "min", label: "Simulation Build Time" }
     },
     {
-      icon: "🎯",
+      icon: "/icons8-graph-100.png",
       title: "Shock Synthetic Data Engine",
       description: "Generates shock events data on multi-variant input factors with unprecedented accuracy and detail for comprehensive risk analysis.",
       accentColor: "text-primary-900",
@@ -189,7 +194,7 @@ export default function TechShowcase() {
       stats: { value: 99, suffix: "%", label: "Data Accuracy" }
     },
     {
-      icon: "🔍",
+      icon: "/icons8-search-100.png",
       title: "Unknown Risk Driver Identification",
       description: "Identifies many unknown variables and intelligently weights the best fit, uncovering hidden risk patterns in complex market scenarios.",
       accentColor: "text-primary-900",

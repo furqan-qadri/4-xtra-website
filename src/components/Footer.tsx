@@ -2,25 +2,25 @@ export default function Footer() {
   return (
     <footer className="relative border-t border-purple-100/50">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="flex flex-col md:flex-row justify-between gap-8 xl:min-h-[120px]">
           
           {/* Left side - Logo and Slogan */}
-          <div className="flex flex-col items-center md:items-start space-y-4">
+          <div className="flex flex-col items-center md:items-start justify-between flex-1">
             {/* Logo */}
-            <div className="flex items-center">
+            <div className="flex items-center mb-4">
               <img src="/logo.png" alt="4-Xtra" className="h-12 xl:h-20" />
             </div>
             
             {/* Slogan */}
             <p className="text-lg text-gray-600 text-center md:text-left font-medium">
-            Intelligence Beyond Uncertainty
+              Intelligence Beyond Uncertainty
             </p>
           </div>
 
           {/* Right side - Actions and Copyright */}
-          <div className="flex flex-col justify-between gap-4 xl:gap-6 h-full md:items-end items-center">
+          <div className="flex flex-col md:items-end items-center justify-between flex-1">
             {/* Action buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-4">
               <a
                 href="https://linkedin.com/company/4-xtra-technologies"
                 target="_blank"
@@ -44,7 +44,7 @@ export default function Footer() {
             {/* Copyright */}
             <div className="text-center md:text-right text-sm text-gray-500">
               <p>&copy; {new Date().getFullYear()} 4-Xtra Technologies. All rights reserved.</p>
-             </div>
+            </div>
           </div>
         </div>
 
