@@ -50,7 +50,7 @@ function RiskFactorCard({
           <div className="text-3xl mr-3 group-hover:scale-110 transition-transform duration-300">
             {icon}
           </div>
-          <h3 className="text-lg font-bold text-gray-800 group-hover:text-purple-700 transition-colors duration-300">
+          <h3 className="text-lg font-bold text-primary-900 group-hover:text-purple-700 transition-colors duration-300">
             {category}
           </h3>
         </div>
@@ -98,31 +98,31 @@ export default function Product() {
       category: "Market Dynamics",
       factors: ["Volatility Patterns", "Liquidity Shifts", "Price Correlations", "Trading Volumes"],
       icon: "📈",
-      color: "bg-purple-500"
+      color: "bg-primary-900"
     },
     {
       category: "Economic Indicators", 
       factors: ["Interest Rates", "Inflation Metrics", "GDP Growth", "Employment Data"],
       icon: "🏛️",
-      color: "bg-indigo-500"
+     color: "bg-primary-900"
     },
     {
       category: "Geopolitical Events",
       factors: ["Policy Changes", "Trade Relations", "Political Stability", "Regulatory Shifts"],
       icon: "🌍",
-      color: "bg-pink-500"
+    color: "bg-primary-900"
     },
     {
       category: "Sector Analysis",
       factors: ["Industry Trends", "Company Performance", "Sector Rotation", "Credit Metrics"],
       icon: "🏢",
-      color: "bg-emerald-500"
+       color: "bg-primary-900"
     },
     {
       category: "Alternative Assets",
       factors: ["Real Estate", "Commodities", "Crypto Markets", "Private Equity"],
       icon: "💎",
-      color: "bg-amber-500"
+         color: "bg-primary-900"
     },
     {
       category: "Risk Scenarios",
@@ -163,16 +163,16 @@ export default function Product() {
         {/* Section header */}
         <div className="text-center mb-16">
           <div className={`transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h1 className="text-4xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-800 leading-none tracking-tight mb-4">
-              POWERED BY
-            </h1>
+          <h1 className="text-xl lg:text-7xl xl:text-6xl text-primary-900 font-extrabold">
+                {/* <MorphingText text="MISSION" delay={300} /> */}POWERED BY
+              </h1>
           </div>
         </div>
 
         {/* Proprietary Knowledge Layer Section */}
         <div className="mb-12">
           <div className={`text-center mb-12 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h2 className="text-3xl lg:text-4xl font-black text-purple-600 mb-6">
+            <h2 className="text-3xl lg:text-4xl font-black text-primary-900 mb-6">
               Proprietary Knowledge Layer
             </h2>
           </div>
@@ -221,7 +221,7 @@ export default function Product() {
         {/* Risk Factor Categories Grid */}
         <div className="mb-16">
           <div className={`text-center mb-12 transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h3 className="text-3xl lg:text-4xl font-black text-gray-800 mb-4">
+            <h3 className="text-3xl lg:text-4xl font-black text-primary-900 mb-4">
               Comprehensive Risk Coverage
             </h3>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">

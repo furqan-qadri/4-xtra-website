@@ -93,7 +93,7 @@ export default function Mission() {
   }, []);
 
   return (
-    <section id="mission-section" className="relative overflow-hidden pb-20">
+    <section id="mission-section" className="relative overflow-hidden pb-20 pt-10">
 
              {/* Main content container */}
        <div className="relative z-10 max-w-7xl mx-auto px-8">
@@ -110,7 +110,7 @@ export default function Mission() {
             
             {/* Giant "MISSION" */}
             <div className="relative">
-              <h1 className="text-xl lg:text-7xl xl:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-800 leading-none tracking-tight">
+              <h1 className="text-xl lg:text-7xl xl:text-6xl text-primary-900 font-extrabold">
                 <MorphingText text="MISSION" delay={300} />
               </h1>
               
@@ -133,7 +133,7 @@ export default function Mission() {
               To empower every decision-maker in{' '}
               <span className="font-bold text-purple-700">Alternative Assets</span>{' '}
               to better anticipate the impacts of{' '}
-              <span className="font-bold text-indigo-700">macro-level shock events</span>{' '}
+              <span className="font-bold text-primary-900">macro-level shock events</span>{' '}
               and immediately react
             </p>
           </div>
@@ -148,7 +148,7 @@ export default function Mission() {
             description="Enhances real-time strategic decision making within periods of volatility"
             side="left"
             colorGradient="bg-gradient-to-r from-purple-500 to-purple-600"
-            textColor="text-purple-600"
+            textColor="text-primary-900"
             delay={800}
           />
 
@@ -158,7 +158,7 @@ export default function Mission() {
             description="Amplifies opportunities to make additional margin gains"
             side="right"
             colorGradient="bg-gradient-to-r from-indigo-500 to-purple-600"
-            textColor="text-indigo-600"
+            textColor="text-primary-900"
             delay={1200}
           />
 
@@ -168,7 +168,7 @@ export default function Mission() {
             description="Complies with increasing internal and regulatory demands on stress-testing for shock events"
             side="left"
             colorGradient="bg-gradient-to-r from-purple-600 to-indigo-700"
-            textColor="text-purple-700"
+            textColor="text-primary-900"
             delay={1600}
           />
         </div>

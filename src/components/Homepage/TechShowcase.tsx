@@ -117,7 +117,7 @@ function TechHighlightBanner({ isVisible }: { isVisible: boolean }) {
       <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 bg-[length:200%_100%] animate-gradient" />
       
       {/* Glass overlay */}
-      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
+      {/* <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" /> */}
       
       {/* Content */}
       <div className="relative z-10 px-8 py-12 text-center">
@@ -174,16 +174,16 @@ export default function TechShowcase() {
       icon: "⚡",
       title: "Super-Fast Conditional Modelling",
       description: "Builds comprehensive simulations in minutes or hours, not weeks or months. Revolutionary speed meets enterprise-grade precision.",
-      accentColor: "text-yellow-600",
-      gradientFrom: "from-yellow-500",
-      gradientTo: "to-orange-600",
+      accentColor: "text-primary-900",
+      gradientFrom: "from-purple-500",
+      gradientTo: "to-indigo-600",
       stats: { value: 10, suffix: "min", label: "Simulation Build Time" }
     },
     {
       icon: "🎯",
       title: "Shock Synthetic Data Engine",
       description: "Generates shock events data on multi-variant input factors with unprecedented accuracy and detail for comprehensive risk analysis.",
-      accentColor: "text-purple-600",
+      accentColor: "text-primary-900",
       gradientFrom: "from-purple-500",
       gradientTo: "to-indigo-600",
       stats: { value: 99, suffix: "%", label: "Data Accuracy" }
@@ -192,9 +192,9 @@ export default function TechShowcase() {
       icon: "🔍",
       title: "Unknown Risk Driver Identification",
       description: "Identifies many unknown variables and intelligently weights the best fit, uncovering hidden risk patterns in complex market scenarios.",
-      accentColor: "text-emerald-600",
-      gradientFrom: "from-emerald-500",
-      gradientTo: "to-teal-600",
+      accentColor: "text-primary-900",
+      gradientFrom: "from-purple-500",
+      gradientTo: "to-indigo-600",
       stats: { value: 500, suffix: "+", label: "Risk Variables" }
     }
   ];
@@ -219,31 +219,20 @@ export default function TechShowcase() {
         {/* Section header */}
         <div className="text-center mb-16">
           <div className={`transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="mb-4">
+            {/* <div className="mb-4">
               <span className="text-2xl lg:text-3xl font-light text-gray-600 tracking-[0.3em] uppercase">
                 Our
               </span>
-            </div>
-            <h1 className="text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-800 leading-none tracking-tight mb-8">
-              TECH
-            </h1>
+            </div> */}
+            <h1 className="text-xl lg:text-7xl xl:text-6xl text-primary-900 font-extrabold mb-10 ">
+                {/* <MorphingText text="MISSION" delay={300} />  */}
+                TECH
+              </h1>
             <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
               Revolutionary technology stack powering the future of financial risk intelligence
             </p>
           </div>
         </div>
-
-        {/* <div className={`mt-20 text-center transition-all duration-1500 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="relative inline-block">
-            <div className="absolute -inset-4 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-2xl blur-lg opacity-20 animate-pulse" />
-            <div className="relative bg-white/90 backdrop-blur-xl rounded-2xl px-8 py-6 shadow-xl border border-white/30">
-              <p className="text-lg font-semibold text-gray-800">
-                Transforming <span className="text-purple-600 font-black">complexity</span> into 
-                <span className="text-indigo-600 font-black"> clarity</span> with cutting-edge AI
-              </p>
-            </div>
-          </div>
-        </div> */}
 
         {/* Tech highlight banner */}
         <div className="mb-20">
