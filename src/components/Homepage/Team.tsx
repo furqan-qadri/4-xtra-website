@@ -153,7 +153,7 @@ export default function Team() {
   ];
 
   return (
-    <section id="team-section" className="relative min-h-screen overflow-hidden py-20">
+    <section id="team-section" className="relative min-h-screen overflow-hidden pb-20">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating particles */}

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 // Animated counter component
-function AnimatedCounter({ target, suffix = "", duration = 2000 }: { target: number, suffix?: string, duration?: number }) {
+function AnimatedCounter({ target, suffix = "", duration = 700 }: { target: number, suffix?: string, duration?: number }) {
   const [count, setCount] = useState(0);
   
   useEffect(() => {

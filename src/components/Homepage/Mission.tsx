@@ -93,10 +93,10 @@ export default function Mission() {
   }, []);
 
   return (
-    <section id="mission-section" className="relative min-h-screen overflow-hidden">
+    <section id="mission-section" className="relative overflow-hidden pb-20">
 
              {/* Main content container */}
-       <div className="relative z-10 max-w-7xl mx-auto px-8 py-12">
+       <div className="relative z-10 max-w-7xl mx-auto px-8">
         
                  {/* Mission header - Creative typography */}
          <div className="text-center mb-20">

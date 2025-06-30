@@ -200,7 +200,7 @@ export default function TechShowcase() {
   ];
 
   return (
-    <section id="tech-showcase-section" className="relative min-h-screen overflow-hidden py-20">
+    <section id="tech-showcase-section" className="relative overflow-hidden pb-20">
       {/* Custom animations */}
       <style>{`
         @keyframes gradient {

@@ -133,7 +133,7 @@ export default function Product() {
   ];
 
   return (
-    <section id="product-section" className="relative min-h-screen overflow-hidden py-20">
+    <section id="product-section" className="relative overflow-hidden pb-20">
       {/* Custom animations */}
       <style>{`
         @keyframes float-knowledge {

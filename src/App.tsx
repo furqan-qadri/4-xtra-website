@@ -7,6 +7,8 @@ import Product from "./components/Homepage/Product";
 // import ExtremeEvents from "./components/Homepage/ExtremeEvents";
 // import PredictionDemo from "./components/Homepage/PredictionDemo";
 import Team from "./components/Homepage/Team";
+import PredictionDemo from "./components/Homepage/PredictionDemo";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,9 +21,7 @@ function App() {
       <Team />
       {/* <EngineOverview /> */}
       {/* <ExtremeEvents/> */}
-      <div className="container mx-auto px-6 lg:px-8 pb-20">
-          {/* <PredictionDemo isVisible={true} /> */}
-        </div>
+      <Footer />
     </div>
   );
 }
