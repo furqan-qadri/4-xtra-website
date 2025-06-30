@@ -52,8 +52,8 @@ function DiagonalSection({
         className={`absolute ${isLeft ? '-left-20 lg:-left-40' : '-right-20 lg:-right-40'} top-0 w-full h-full ${colorGradient} opacity-10`}
         style={{
           clipPath: isLeft 
-            ? 'polygon(0 0, 70% 0, 50% 100%, 0 100%)'
-            : 'polygon(30% 0, 100% 0, 100% 100%, 50% 100%)'
+            ? 'polygon(0 0, 80% 0, 60% 100%, 0 100%)'
+            : 'polygon(20% 0, 100% 0, 100% 100%, 40% 100%)'
         }}
       />
       
