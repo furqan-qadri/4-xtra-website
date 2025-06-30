@@ -257,7 +257,7 @@ export default function TechShowcase() {
                 Our
               </span>
             </div>
-            <h1 className="text-6xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-800 leading-none tracking-tight mb-8">
+            <h1 className="text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-800 leading-none tracking-tight mb-8">
               TECH
             </h1>
             <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto">

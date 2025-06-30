@@ -46,7 +46,7 @@ function DiagonalSection({
   const isLeft = side === 'left';
 
   return (
-    <div className={`relative ${isLeft ? 'text-left' : 'text-right'} transition-all duration-1500 ${isVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${isLeft ? '-translate-x-20' : 'translate-x-20'}`}`}>
+    <div className={`relative transition-all duration-1500 ${isVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${isLeft ? '-translate-x-20' : 'translate-x-20'}`}`}>
       {/* Diagonal background element */}
       <div 
         className={`absolute ${isLeft ? '-left-20 lg:-left-40' : '-right-20 lg:-right-40'} top-0 w-full h-full ${colorGradient} opacity-10`}
@@ -58,16 +58,16 @@ function DiagonalSection({
       />
       
              {/* Content */}
-       <div className={`relative z-10 p-6 lg:p-8 ${isLeft ? 'pl-0 lg:pl-6' : 'pr-0 lg:pr-6'}`}>
+       <div className={`relative z-10 p-6 lg:p-8 ${isLeft ? 'pl-0 lg:pl-6 text-left' : 'pl-6 lg:pl-12 text-right'}`}>
                  <h3 className={`text-3xl lg:text-5xl font-black ${textColor} mb-4 tracking-tight leading-tight`}>
            {title}
          </h3>
-        <p className="text-gray-700 text-lg lg:text-xl leading-relaxed max-w-md">
+        <p className={`text-gray-700 text-lg lg:text-xl leading-relaxed max-w-md ${isLeft ? '' : 'ml-auto'}`}>
           {description}
         </p>
         
         {/* Accent line */}
-        <div className={`mt-6 h-1 w-20 ${colorGradient} rounded-full`} />
+        <div className={`mt-6 h-1 w-20 ${colorGradient} rounded-full ${isLeft ? '' : 'ml-auto'}`} />
       </div>
     </div>
   );
