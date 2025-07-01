@@ -82,7 +82,7 @@ function FloatingMetricCard({
           >
             <AnimatedCounter target={value} suffix={suffix} />
           </div>
-          <div className="text-gray-600 font-semibold text-xs sm:text-sm tracking-wider uppercase">
+          <div className="text-gray-600 font-semibold xl:text-md text-sm tracking-wider uppercase">
             {label}
           </div>
         </div>
@@ -123,32 +123,32 @@ export default function Hero() {
 
   const metrics = [
     {
-      value: 500,
-      suffix: "T+",
-      label: "Global Wealth Market",
+      value: 15,
+      suffix: " Years +",
+      label: "of patented R&D",
       colorClass: "text-purple-600",
       gradientFrom: "from-purple-500",
       gradientTo: "to-indigo-600",
       tilt: -3,
     },
     {
-      value: 99,
-      suffix: "%",
-      label: "Scenario Accuracy",
+      value: 250,
+      suffix: "+",
+      label: "Risk Factors Coverage",
       colorClass: "text-purple-700",
       gradientFrom: "from-purple-600",
       gradientTo: "to-pink-600",
       tilt: 2,
     },
-    {
-      value: 10,
-      suffix: "ms",
-      label: "Response Time",
-      colorClass: "text-purple-800",
-      gradientFrom: "from-indigo-600",
-      gradientTo: "to-purple-700",
-      tilt: -1,
-    },
+    // {
+    //   value: 10,
+    //   suffix: "ms",
+    //   label: "Response Time",
+    //   colorClass: "text-purple-800",
+    //   gradientFrom: "from-indigo-600",
+    //   gradientTo: "to-purple-700",
+    //   tilt: -1,
+    // },
   ];
 
   return (
@@ -225,19 +225,15 @@ export default function Hero() {
           {/* Main headline */}
           <div className="space-y-3 sm:space-y-4">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
-              AI-Powered Market
+              WHAT IF ...
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 block">
-                Scenario Generation
+                Market Scenario Generation
               </span>
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-5xl mx-auto px-2 sm:px-0">
-              Transform hypothetical shock events into actionable risk
-              intelligence with our next-generation synthetic data platform for
-              the{" "}
-              <span className="text-purple-700 font-semibold">
-                $500 trillion
-              </span>{" "}
-              global wealth market.
+              Transform hypothetical user-defined shock events into actionable
+              risk intelligence with our disruptive scenario generation
+              platform.
             </p>
           </div>
 
@@ -261,7 +257,7 @@ export default function Hero() {
           </div>
 
           {/* Key benefits */}
-          <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 sm:gap-4 lg:gap-8 max-w-6xl mx-auto px-2 sm:px-0">
+          {/* <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 sm:gap-4 lg:gap-8 max-w-6xl mx-auto px-2 sm:px-0">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
@@ -278,7 +274,7 @@ export default function Hero() {
                 </span>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-2 px-4 sm:px-0">

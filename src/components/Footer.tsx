@@ -11,9 +11,14 @@ export default function Footer() {
             </div>
 
             {/* Slogan */}
-            <p className="text-lg text-gray-600 text-center md:text-left font-medium">
+            <p className="text-lg text-gray-600 text-center md:text-left font-bold">
               Intelligence Beyond Uncertainty
             </p>
+
+            <div className="mt-3">
+              4-Xtra Technologies, Nexus, Discovery Way, <br />
+              Leeds, West Yorkshire, LS2 3AA
+            </div>
           </div>
 
           {/* Right side - Actions and Copyright */}

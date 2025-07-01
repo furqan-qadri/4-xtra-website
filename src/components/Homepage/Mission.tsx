@@ -178,7 +178,7 @@ export default function Mission() {
           {/* Fast Reaction - Left side */}
           <DiagonalSection
             title="FAST REACTION"
-            description="Enhances real-time strategic decision making within periods of volatility"
+            description="Enhance real-time strategic decision making within periods of volatility"
             side="left"
             colorGradient="bg-gradient-to-r from-purple-500 to-purple-600"
             textColor="text-primary-900"
@@ -187,8 +187,9 @@ export default function Mission() {
 
           {/* Better Returns - Right side */}
           <DiagonalSection
-            title="BETTER RETURNS"
-            description="Amplifies opportunities to make additional margin gains"
+            title="AMPLIFY RETURNS"
+            description="Identify risk drivers and opportunities to
+            make additional margin gains."
             side="right"
             colorGradient="bg-gradient-to-r from-indigo-500 to-purple-600"
             textColor="text-primary-900"
@@ -198,7 +199,7 @@ export default function Mission() {
           {/* Stress Test - Left side */}
           <DiagonalSection
             title="STRESS-TEST SHOCK EVENTS"
-            description="Complies with increasing internal and regulatory demands on stress-testing for shock events"
+            description="Comply with increasing internal and regulatory demands on stress-testing for shock events"
             side="left"
             colorGradient="bg-gradient-to-r from-purple-600 to-indigo-700"
             textColor="text-primary-900"
