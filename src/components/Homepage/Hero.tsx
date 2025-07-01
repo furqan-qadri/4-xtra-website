@@ -115,11 +115,11 @@ export default function Hero() {
     setIsVisible(true);
   }, []);
 
-  const benefits = [
-    "Real-time cross-asset intelligence",
-    "Custom extreme scenario modeling",
-    "AI-driven risk insights & analysis",
-  ];
+  // const benefits = [
+  //   "Real-time cross-asset intelligence",
+  //   "Custom extreme scenario modeling",
+  //   "AI-driven risk insights & analysis",
+  // ];
 
   const metrics = [
     {
