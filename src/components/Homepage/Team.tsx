@@ -104,7 +104,7 @@ function TeamMemberCard({
 
         {/* Expertise summary */}
         <div className="mb-6">
-          <p className="text-sm text-gray-600 leading-relaxed text-center">
+          <p className="text-sm text-gray-600 leading-relaxed text-left">
             {expertise}
           </p>
         </div>

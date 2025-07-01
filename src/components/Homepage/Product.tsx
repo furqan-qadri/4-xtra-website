@@ -178,17 +178,17 @@ export default function Product() {
       icon: "/icons8-diamond-100.png",
       color: "bg-primary-900",
     },
-    {
-      category: "Risk Scenarios",
-      factors: [
-        "Stress Testing",
-        "Tail Risk Events",
-        "Black Swan Analysis",
-        "Cascade Effects",
-      ],
-      icon: "/icons8-risk-100.png",
-      color: "bg-red-500",
-    },
+    // {
+    //   category: "Risk Scenarios",
+    //   factors: [
+    //     "Stress Testing",
+    //     "Tail Risk Events",
+    //     "Black Swan Analysis",
+    //     "Cascade Effects",
+    //   ],
+    //   icon: "/icons8-risk-100.png",
+    //   color: "bg-red-500",
+    // },
   ];
 
   return (
@@ -259,7 +259,7 @@ export default function Product() {
             }`}
           >
             {/* Animated gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-r rounded-3xl from-purple-600 via-indigo-600 via-pink-600 to-purple-600 bg-[length:300%_100%] animate-gradient" />
+            <div className="absolute inset-0 bg-gradient-to-r rounded-3xl from-purple-600  via-pink-600 to-purple-600 bg-[length:300%_100%] animate-gradient" />
 
             {/* Floating rings */}
             {[...Array(3)].map((_, i) => (
@@ -294,7 +294,7 @@ export default function Product() {
         </div>
 
         {/* Risk Factor Categories Grid */}
-        <div className="mb-16">
+        <div className="">
           <div
             className={`text-center mb-12 transition-all duration-1000 delay-1000 ${
               isVisible
@@ -306,17 +306,31 @@ export default function Product() {
               Comprehensive Risk Coverage
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our AI models are trained across diverse risk categories to
-              provide holistic market intelligence
+              Our proprietary Scenario Generation Engine together LLM Agent
+              stack are trained across diverse risk categories to provide
+              holistic market intelligence
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {riskFactors.map((category, index) => (
+          {/* First row with 3 columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {riskFactors.slice(0, 3).map((category, index) => (
               <RiskFactorCard
                 key={index}
                 {...category}
                 delay={1200 + index * 150}
+                isVisible={isVisible}
+              />
+            ))}
+          </div>
+
+          {/* Second row with 2 columns centered */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl flex-grow mx-auto">
+            {riskFactors.slice(3).map((category, index) => (
+              <RiskFactorCard
+                key={index + 3}
+                {...category}
+                delay={1200 + (index + 3) * 150}
                 isVisible={isVisible}
               />
             ))}
