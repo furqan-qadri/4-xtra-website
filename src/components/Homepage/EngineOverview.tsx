@@ -1,32 +1,32 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 // Chart data for the four financial instruments
-const chartData = {
-  BTCUSD: {
-    real: [95000, 92000, 88000, 85000, 87000, 89000, 83000, 81000, 85000],
-    range: { min: 65000, max: 110000 },
-    current: 85000,
-    shockEvent: "Trump tariffs",
-  },
-  CrudeOil: {
-    real: [72, 70, 68, 66, 67, 69, 65, 62, 64],
-    range: { min: 45, max: 85 },
-    current: 64,
-    shockEvent: "Trump tariffs",
-  },
-  Gold: {
-    real: [2950, 2900, 2880, 2920, 3000, 3100, 3050, 2950, 2980],
-    range: { min: 2800, max: 3200 },
-    current: 2980,
-    shockEvent: "Trump tariffs",
-  },
-  Nasdaq100: {
-    real: [22000, 21500, 21000, 20500, 19500, 19000, 18500, 17000, 18500],
-    range: { min: 16000, max: 22000 },
-    current: 18500,
-    shockEvent: "Trump tariffs",
-  },
-};
+// const chartData = {
+//   BTCUSD: {
+//     real: [95000, 92000, 88000, 85000, 87000, 89000, 83000, 81000, 85000],
+//     range: { min: 65000, max: 110000 },
+//     current: 85000,
+//     shockEvent: "Trump tariffs",
+//   },
+//   CrudeOil: {
+//     real: [72, 70, 68, 66, 67, 69, 65, 62, 64],
+//     range: { min: 45, max: 85 },
+//     current: 64,
+//     shockEvent: "Trump tariffs",
+//   },
+//   Gold: {
+//     real: [2950, 2900, 2880, 2920, 3000, 3100, 3050, 2950, 2980],
+//     range: { min: 2800, max: 3200 },
+//     current: 2980,
+//     shockEvent: "Trump tariffs",
+//   },
+//   Nasdaq100: {
+//     real: [22000, 21500, 21000, 20500, 19500, 19000, 18500, 17000, 18500],
+//     range: { min: 16000, max: 22000 },
+//     current: 18500,
+//     shockEvent: "Trump tariffs",
+//   },
+// };
 
 // Mini chart component
 // function MiniChart({ data, title, isVisible }: {
